@@ -17,6 +17,14 @@ include './database.php';
     echo "<span style='color: green;'>".$_GET['msg']."</span>";
   }
 ?>
+
+<?php
+  if(isset($_GET['delmsg'])){
+    echo "<span style='color: green;'>".$_GET['delmsg']."</span>";
+  }
+?>
+
+
 <table class="table ml-3 text-center">
   <thead>
     <tr>
@@ -37,7 +45,7 @@ include './database.php';
                 <td><?php echo $row['skill']?></td>
                 <td>
                     <a href="update.php?id=<?php echo $row['id']?>" class="btn btn-info btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
                 </tr>
         <?php }?>
@@ -51,3 +59,4 @@ include './database.php';
 <a href="index.php" class="btn btn-danger btn-sm">Read</a>
 
 <?php include './footer.php'; ?>
+

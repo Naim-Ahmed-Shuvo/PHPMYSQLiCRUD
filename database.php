@@ -34,11 +34,37 @@ class Database{
           }
     }
 
+   // insert new row
     public function insert($query){
         $insert_row = $this->link->query($query) or die ($this->link->error.__LINE__);
 
           if($insert_row){
               header("Location: index.php?msg=".urlencode("Data inserted successfully"));
+              exit();
+          } else{
+              die("Error : (".$this->link->errno.")".$this->link->error);
+          }
+    }
+
+     //update
+    public function update($query){
+        $insert_row = $this->link->query($query) or die ($this->link->error.__LINE__);
+
+          if($insert_row){
+              header("Location: index.php?msg=".urlencode("Data inserted successfully"));
+              exit();
+          } else{
+              die("Error : (".$this->link->errno.")".$this->link->error);
+          }
+    }
+
+
+   // delete
+    public function delete($query){
+        $insert_row = $this->link->query($query) or die ($this->link->error.__LINE__);
+
+          if($insert_row){
+              header("Location: index.php?delmsg=".urlencode("Data Deleted successfully"));
               exit();
           } else{
               die("Error : (".$this->link->errno.")".$this->link->error);

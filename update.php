@@ -23,7 +23,7 @@ include "database.php";
       } else{
           $query = "UPDATE  tbl_user SET name='$name' , email='$email', skill='$skill'
            WHERE id=$id";
-          $create =  $db->insert( $query );
+          $create =  $db->update( $query );
       }
   }
 
